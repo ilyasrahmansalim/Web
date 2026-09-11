@@ -1,0 +1,21 @@
+#include <stdio.h> 
+
+int main() { 
+    int x = 5, r;
+    int q = 7;      // Kita butuh q seperti di soal awal
+    int *p1 = &q;   // p1 adalah pointer yang menunjuk ke q
+    int *p2 = &q;   // p2 juga menunjuk ke q
+
+    r = 12; 
+    *p2 = *p1 * 2;  // Mengubah isi q menjadi 14 (7 * 2)
+    p1 = &x;        // p1 sekarang pindah menunjuk ke x (isinya 5)
+    
+    // return *p1 * 3 (5 * 3 = 15)
+    printf("Hasil simulasi return: %d\n", *p1 * 3); 
+
+    printf("Isi x  = %d\n", x); 
+    printf("Isi r  = %d\n", r);
+    printf("Isi p1 (alamat x) = %p\n", (void*)p1); 
+    printf("Isi *p1 (nilai x) = %d\n", *p1); 
+    printf("Isi q (efek *p2)  = %d\n", q);
+}
